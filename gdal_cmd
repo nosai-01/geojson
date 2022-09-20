@@ -1,0 +1,6 @@
+REM SQLのFROMテーブルはJSONファイルのNAMEを記述する
+ogr2ogr -f GeoJSON -explodecollections output.geojson fukushima.geojson -dialect sqlite -sql "SELECT ST_Union(geometry) as geometry FROM fukushima"
+ogr2ogr -f GeoJSON -explodecollections C:\Users\NOSAI\Desktop\kenpoku.geojson C:\Users\NOSAI\Desktop\07_fukushima_nosai.geojson -dialect sqlite -sql "SELECT ST_Union(geometry) as geometry FROM fukushima where code in('10','15','64')"
+ogr2ogr -f GeoJSON -explodecollections C:\Users\NOSAI\Desktop\tyuuou.geojson C:\Users\NOSAI\Desktop\07_fukushima_nosai.geojson -dialect sqlite -sql "SELECT ST_Union(geometry) as geometry FROM fukushima where code in('22','70','75')"
+ogr2ogr -f GeoJSON -explodecollections C:\Users\NOSAI\Desktop\kennnan.geojson C:\Users\NOSAI\Desktop\07_fukushima_nosai.geojson -dialect sqlite -sql "SELECT ST_Union(geometry) as geometry FROM fukushima where code in('30','33')"
+ogr2ogr -f GeoJSON -explodecollections C:\Users\NOSAI\Desktop\aizu.geojson C:\Users\NOSAI\Desktop\07_fukushima_nosai.geojson -dialect sqlite -sql "SELECT ST_Union(geometry) as geometry FROM fukushima where code in('38')"
